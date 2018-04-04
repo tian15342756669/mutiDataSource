@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jiexun.mapper.OlpBlockInfoMapper">
+
+	<select id="getOlpBlockInfo" resultType="com.jiexun.domain.OlpBlockInfoVo">
+		select
+		BLOCK_ID   			blockId,
+		BLOCK_NAME  		blockName,
+		ZFB_APP_ID			zfbAppId,
+		ZFB_PARTNER_ID		zfbPartnerId,
+		ZFB_DOMAIN_URL		zfbDomainUrl
+		from OLP_BLOCK_INFO
+	</select>
+
+
+	<insert id="insertUserInfo" parameterType="com.jiexun.domain.UserInfo">
+		INSERT INTO OLP_USER_INFO(USER_ID,USER_NAME,USER_AGE,USER_ADDRESS)
+		VALUES (#{userId},#{userName},#{userAge},#{userAddress})
+	</insert>
+</mapper>
